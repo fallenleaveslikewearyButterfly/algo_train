@@ -11,10 +11,9 @@ object BubbleSort {
 
   def bubbleSort[E <% Ordered[E]](arr:Array[E], n:Int): Unit ={
     for(i<- Range(0,n)){
-      for(j <-Range(i+1,n)){
-        if(arr(j)<arr(i))
-          SortTestHelper.swap(arr,i,j)
+       for(j<-Range(n-1,i,-1))
+         if(arr(j-1)>arr(j))
+           SortTestHelper.swap(arr,j-1,j)
       }
     }
   }
-}

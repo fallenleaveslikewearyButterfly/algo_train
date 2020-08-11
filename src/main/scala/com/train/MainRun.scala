@@ -9,7 +9,7 @@ import com.train.common.SortTestHelper
   */
 object MainRun {
   def main(args: Array[String]): Unit = {
-    val n=20000
+    val n=10000
 
     val sortTestHelper = SortTestHelper[Int]
 
@@ -18,9 +18,10 @@ object MainRun {
     val arr2 = arr.clone()
     val arr3 = arr.clone()
     val arr4 = arr.clone()
+    sortTestHelper.testSort("Bubble Sort",BubbleSort.bubbleSort,arr4,n)
     sortTestHelper.testSort("Selection Sort",SelectionSort.selectionSort,arr,n)
     sortTestHelper.testSort("Insertion Sort",InsertionSort.insertionSort,arr2,n)
     sortTestHelper.testSort("Insertion Sort2",InsertionSort.insertionSort2,arr3,n)
-    sortTestHelper.testSort("Bubble Sort",BubbleSort.bubbleSort,arr4,n)
+
   }
 }
