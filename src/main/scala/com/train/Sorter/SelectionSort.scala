@@ -26,4 +26,8 @@ object SelectionSort{
       SortTestHelper.swap(arr,i,minIndex)
     }
   }
+
+  def selectionSort2[E <% Ordered[E]](arr:Array[E], n:Int): Unit ={
+    //Todo:优化一次选出最大和最小的，减少比较次数
+  }
 }

@@ -16,4 +16,21 @@ object BubbleSort {
            SortTestHelper.swap(arr,j-1,j)
       }
     }
+  /*
+  * 冒泡排序改进，冒泡排序是两两交换，如果发现没有交换，那么数组及已经是有序的了，提前终止循环就好
+  * */
+  def bubbleSort2[E <% Ordered[E]](arr:Array[E], n:Int): Unit ={
+
+    for(i<- Range(0,n)){
+      var isSorted=true
+      for(j<-Range(n-1,i,-1)){
+        if(arr(j-1)>arr(j)){
+          SortTestHelper.swap(arr,j-1,j)
+          isSorted = !isSorted
+        }
+      }
+      if(isSorted)
+        return
+    }
   }
+}
