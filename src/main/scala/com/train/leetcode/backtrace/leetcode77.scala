@@ -1,4 +1,4 @@
-ckage com.train.leetcode.backtrace
+package com.train.leetcode.backtrace
 import scala.collection.mutable.ListBuffer
 
 object leetcode77 {
