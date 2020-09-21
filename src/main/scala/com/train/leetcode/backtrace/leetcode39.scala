@@ -36,7 +36,7 @@ object leetcode39 {
   }
 
   def main(args: Array[String]): Unit = {
-    val res = combinationSum(Array(2,3,5),8)
+    val res = combinationSum(Array(1),2)
     println(res)
   }
 
