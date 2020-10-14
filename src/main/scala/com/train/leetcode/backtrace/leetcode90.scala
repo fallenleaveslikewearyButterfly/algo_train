@@ -25,6 +25,6 @@ object leetcode90 {
   }
 
   def main(args: Array[String]): Unit = {
-    println(subsetsWithDup(Array(1,2,2)))
+    println(subsetsWithDup(Array(1,2,2,2,2)))
   }
 }
