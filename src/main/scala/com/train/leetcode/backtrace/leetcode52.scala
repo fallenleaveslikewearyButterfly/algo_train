@@ -1,6 +1,6 @@
 import scala.collection.mutable.ListBuffer
 
-object Solution {
+object leetcode52 {
      val res = ListBuffer[List[String]]()
 
   def _solve(pannel:Array[Array[String]],start:Int,n:Int,visited:Array[Array[Boolean]]):Unit = {

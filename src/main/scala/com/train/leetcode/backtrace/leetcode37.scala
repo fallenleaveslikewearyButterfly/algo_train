@@ -5,7 +5,7 @@ object leetcode37 {
   val d = List('1','2','3','4','5','6','7','8','9')
   val visited = scala.collection.mutable.Set[Char]()
 
-  def check(board: Array[Array[Char]],m:Int,n:Int):Boolean = {
+  def check(board: Array[Array[Char]],m:Int,n:Int): Boolean = {
     visited.clear()
     val x = m/3
     val y = n/3
@@ -19,7 +19,8 @@ object leetcode37 {
       }
     }
     visited.clear()
-    for(item<-board(m) if item !='.'){
+    for(i<-Range(0,9) if board(m)(i)!='.'){
+      val item = board(m)(i)
       if(visited.contains(item)){
         return false
       }else{
@@ -27,7 +28,8 @@ object leetcode37 {
       }
     }
     visited.clear()
-    for(item<-board(n) if item !='.'){
+    for(i<-Range(0,9) if board(i)(n)!='.'){
+      val item = board(i)(n)
       if(visited.contains(item)){
         return false
       }else{
@@ -38,41 +40,25 @@ object leetcode37 {
   }
 
 
-  def _solve(board: Array[Array[Char]],x:Int,y:Int,visited:Array[Array[Boolean]]): Boolean ={
-    if(x==8 && y==8){
-      return true
-    }
-    if(board(x)(y)=='.'){
-      for(k <-d){
-        board(x)(y) = k
-        if(check(board,x,y)){
-          if(y+1<9){
-            if(_solve(board,x,y+1,visited))
+  def _solve(board: Array[Array[Char]],x:Int,y:Int): Boolean ={
+    for(i<-Range(0,9)){
+      for(j<-Range(0,9)){
+        if(board(i)(j)=='.'){
+          for(k<-d){
+            board(i)(j)=k
+            if(check(board,i,j) && _solve(board,i,j))
               return true
-          }else if (x+1<9){
-            if(_solve(board,x+1,y+1-9,visited))
-              return true
+            board(i)(j)='.'
           }
+          return false
         }
-        board(x)(y) = '.'
-      }
-    }else{
-      if(y+1<9){
-        if(_solve(board,x,y+1,visited))
-          return true
-      }else if (x+1<9){
-        if( _solve(board,x+1,y+1-9,visited))
-          return true
       }
     }
-    false
+    return true
   }
 
-
-
   def solveSudoku(board: Array[Array[Char]]): Unit = {
-    val visited = Array.fill(9,9)(false)
-    _solve(board,0,0,visited)
+    _solve(board,0,0)
   }
 
   def main(args: Array[String]): Unit = {
@@ -85,13 +71,13 @@ object leetcode37 {
       Array('7','.','.','.','2','.','.','.','6'),
       Array('.','6','.','.','.','.','2','8','.'),
       Array('.','.','.','4','1','9','.','.','5'),
-      Array('.','.','.','.','8','.','.','7','9')
+      Array('.','.','.','.','8','.','.','7','.')
     )
 
     solveSudoku(board)
     for(i<-Range(0,9)){
       for(j<-Range(0,9)){
-        print(board(i)(j)+",")
+        print(board(i)(j)+" , ")
       }
       println()
     }
