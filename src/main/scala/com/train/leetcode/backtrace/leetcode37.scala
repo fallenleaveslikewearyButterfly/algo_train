@@ -40,21 +40,29 @@ object leetcode37 {
   }
 
 
-  def _solve(board: Array[Array[Char]],x:Int,y:Int): Boolean ={
+  def _solve(board: Array[Array[Char]],m:Int,n:Int): Unit ={
+    if(m==8&&n==8&&board(8)(8)!='.' && check(board,8,8)){
+      for(i<-Range(0,9)){
+        for(j<-Range(0,9)){
+          print(board(i)(j)+" , ")
+        }
+        println()
+      }
+    }
     for(i<-Range(0,9)){
       for(j<-Range(0,9)){
         if(board(i)(j)=='.'){
           for(k<-d){
             board(i)(j)=k
-            if(check(board,i,j) && _solve(board,i,j))
-              return true
+            if(check(board,i,j)){
+              _solve(board,i,j)
+            }
             board(i)(j)='.'
           }
-          return false
+          return
         }
       }
     }
-    return true
   }
 
   def solveSudoku(board: Array[Array[Char]]): Unit = {
