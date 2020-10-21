@@ -1,6 +1,6 @@
 package com.train
 
-import com.train.Sorter.{BubbleSort, InsertionSort, QuickSort, SelectionSort}
+import com.train.Sorter._
 import com.train.common.SortTestHelper
 
 /**
@@ -24,6 +24,8 @@ object MainRun {
     //sortTestHelper.testSort("Insertion Sort2",InsertionSort.insertionSort2,arr3,n)
     //sortTestHelper.testSort("Quick Sort",QuickSort.quickSort,arr3,n)
     //sortTestHelper.testSort("Quick Sort2",QuickSort.quickSort2,arr4,n)
-    sortTestHelper.testSort("Quick Sort2",QuickSort.quickSort3,arr4,n)
+    //sortTestHelper.testSort("Quick Sort2",QuickSort.quickSort3,arr4,n)
+    sortTestHelper.testSort("shell sort",ShellSort.shellSort,arr4,n)
+    sortTestHelper.testSort("shell sort",ShellSort.shellSort,Array(9,8,8,6,5,4,3,2,1,0),10)
   }
 }
