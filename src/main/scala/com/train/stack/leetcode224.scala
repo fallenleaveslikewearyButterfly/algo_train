@@ -3,11 +3,10 @@ package com.train.stack
 import scala.collection.mutable.Stack
 object leetcode224 {
 
-  val stackSum=Stack[Int]()
-  val stackSub=Stack[Int]()
+  val stack=Stack[Int]()
 
   def calculate(s: String): Int = {
-    1
+    0
   }
 
   def main(args: Array[String]): Unit = {
