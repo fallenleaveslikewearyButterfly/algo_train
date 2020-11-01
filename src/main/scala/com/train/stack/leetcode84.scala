@@ -26,8 +26,8 @@ object leetcode84 {
   }
 
   def main(args: Array[String]): Unit = {
-    println(largestRectangleArea(Array(2,1,5,6,5,2,3)))
-    println(largestRectangleArea(Array(1)))
-    println(largestRectangleArea(Array(2,1,2)))
+    //println(largestRectangleArea(Array(2,1,5,6,5,2,3)))
+    //println(largestRectangleArea(Array(1)))
+    println(largestRectangleArea(Array(0,2,1,2)))
   }
 }
