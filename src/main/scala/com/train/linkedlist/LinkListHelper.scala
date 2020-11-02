@@ -20,12 +20,13 @@ object LinkListHelper {
   }
 
   def printLinkedList(head:ListNode):Unit={
+    print(head.x)
     var current = head.next
     while(current!=null){
       print(f"->${current.x}")
       current = current.next
     }
-    print("->null")
+    println("->null")
   }
 
   def main(args: Array[String]): Unit = {
