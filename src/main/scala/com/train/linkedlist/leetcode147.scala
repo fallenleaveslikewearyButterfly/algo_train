@@ -4,7 +4,7 @@ object leetcode47 {
   def insertionSortList(head: ListNode): ListNode = {
     var dummyHead = new ListNode()
     dummyHead.next=head
-    if(head.next==null){
+    if(head==null){
       return head
     }
     var l1tail = head
