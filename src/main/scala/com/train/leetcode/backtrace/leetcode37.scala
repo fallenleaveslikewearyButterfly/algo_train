@@ -83,11 +83,5 @@ object leetcode37 {
     )
 
     solveSudoku(board)
-    for(i<-Range(0,9)){
-      for(j<-Range(0,9)){
-        print(board(i)(j)+" , ")
-      }
-      println()
-    }
   }
 }

@@ -2,9 +2,7 @@ package com.train.leetcode
 
 object leetcode292 {
   def canWinNim(n: Int): Boolean = {
-    if(n==0){
-
-    }
+    true
   }
 
   def main(args: Array[String]): Unit = {
